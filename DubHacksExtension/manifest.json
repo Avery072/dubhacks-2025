@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Product Image Scraper",
+  "version": "2.0",
+  "description": "Right-click on a product page to scrape all its images.",
+  "permissions": [
+    "contextMenus",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
