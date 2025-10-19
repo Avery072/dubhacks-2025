@@ -7,18 +7,29 @@
  * 4. Add an `imageUrlAttribute` which is the HTML attribute that holds the image URL (usually 'src').
  */
 const siteConfigs = {
-  "www.abercrombie.com": {
-    titleSelector: 'h1.pdp-product-title-v2__product-name',
-    imageSelector: 'div.product-page-gallery-mfe button.product-image img',
-    imageUrlAttribute: 'src',
-    // Optional function to clean up URLs if needed
-    cleanUrl: (url) => url.split('?')[0] + '?policy=product-large'
-  },
-  "www.macys.com": {
-    titleSelector: '.product-name', // Example, needs to be verified
-    imageSelector: '.main-image-container img', // Example, needs to be verified
-    imageUrlAttribute: 'src'
-  }
+    "www.abercrombie.com": {
+      titleSelector: 'h1.pdp-product-title-v2__product-name',
+      imageSelector: 'div.product-page-gallery-mfe button.product-image img',
+      imageUrlAttribute: 'src',
+      cleanUrl: (url) => url.split('?')[0] + '?policy=product-large'
+    },
+    "www.uniqlo.com": {
+      titleSelector: 'h1[data-testid="productName"]',
+      imageSelector: 'div.media-gallery--grid img.image__img',
+      imageUrlAttribute: 'src',
+      cleanUrl: (url) => url.split('?')[0] + '?width=1000'
+    },
+    "www.zara.com": {
+      titleSelector: 'h1.product-detail-info__header-name', 
+      imageSelector: 'ul.product-detail-view__extra-images img.media-image__image', 
+      imageUrlAttribute: 'src', 
+      cleanUrl: (url) => url.replace(/w=\d+/, 'w=1900') 
+    },
+    "www.macys.com": {
+      titleSelector: '.product-name',
+      imageSelector: '.main-image-container img',
+      imageUrlAttribute: 'src'
+    }
   // Add more sites here...
 };
 
